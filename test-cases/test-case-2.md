@@ -34,11 +34,11 @@ Create a firewall rule to allow connections from the Guest_Network to the Public
 
 <div align="center">
  <p>`show firewall name guest` and 'show interface ethernet eth3' for the guest access list</p>
-  <img src="../screenshots/t2/show_firewall_interface.png" alt="firewall interface" width="600">
+  <img src="../screenshots/t2/show_firewall_interface.png" alt="firewall interface" width="700">
 </div>
 <br><br><br>
 <div align="center">
  <p>Guest device can ping the public network, at 8.8.8.8, but cannot ping internal devices
 </p>
-  <img src="../screenshots/t2/acl_ping.png" alt="acl ping" width="600">
+  <img src="../screenshots/t2/acl_ping.png" alt="acl ping" width="700">
 </div>
