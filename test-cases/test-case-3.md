@@ -12,6 +12,16 @@ The playbook will read the contents of the banner file, located in files/banner.
 
 
 ## Network Diagram Segment
+<br>
+<div align="center">
+  <img src="../screenshots/t3/diagram3.png" alt="diagram3" width="700">
+</div>
+<div align="center">
+  <img src="../screenshots/t3/core_legend.png" alt="core" width="345">
+  <img src="../screenshots/t3/server_legend.png" alt="server" legend" width="345">
+  <img src="../screenshots/t3/device_legend.png" alt="device" legend" width="345">
+ 
+</div>
 
 ## Testing Method
 Make sure that SSH is enabled on Ubuntu desktops:  
@@ -115,7 +125,55 @@ Run the playbook in /home/student/ansible:
 `Ansible-playbook –i inv.ini banners.yml –e “ansible_become_password=P@ssw0rd”`  
 
 <br>
+<div align="center">
+  <img src="../screenshots/t3/playbook1.png" alt="playbook1" width="600">
+  <img src="../screenshots/t3/playbook2.png" alt="playbook2" width="600">
+  <img src="../screenshots/t3/playbook3.png" alt="playbook3" width="600">
+</div>
+<br><br>
 
+### Below are the successful post-login banners that have been updated with the ansible playbook.
+<br>
+<div align="center">
+  <p>Banner configured on the edge router</p>
+  <img src="../screenshots/t3/edge_banner.png" alt="edge banner" width="600">
+</div>
+<br><br>
+<div align="center">
+ <p>Banner configured on the firewall
+</p>
+  <img src="../screenshots/t3/firewall_banner.png" alt="firewall banner" width="600">
+</div>
+<br><br>
+<div align="center">
+  <p>Banner configured on the distribution switch</p>
+  <img src="../screenshots/t3/switch_banner.png" alt="switch banner" width="600">
+</div>
+<br><br>
+<div align="center">
+ <p>Banner configured on the linux servers
+</p>
+  <img src="../screenshots/t3/linux_banner.png" alt="linux banner" width="600">
+</div>
+<br><br>
+ <div align="center">
+ <p>Banner configured on the Windows desktops
+</p>
+  <img src="../screenshots/t3/windows_banner.png" alt="windows banner" width="600">
+</div>
+<br>
+ <div align="center">
+ <p>Changing the banner title on Windows
+</p>
+  <img src="../screenshots/t3/wbanner_title.png" alt="windows banner title" width="600">
+</div>
+<br>
+ <div align="center">
+ <p>Changing the banner message on Windows
+</p>
+  <img src="../screenshots/t3/wbanner_text.png" alt="windows banner message" width="600">
+</div>
+<br><br>
 If banners needed to be removed before running the playbook, use the following commands:  
 
 In Vyos OS:  
