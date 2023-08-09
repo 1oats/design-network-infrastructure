@@ -1,0 +1,62 @@
+- name: linux banners
+  hosts: linux
+  become: true
+
+  tasks:
+    - name: Set log-in banner on Linux devices
+      copy:    
+        src: files/banner.txt
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: '0644'
+        
+
+- name: windows banners
+  hosts: windows
+
+  tasks:
+    - name: read login banner
+      set_fact:
+        banner_content: "{{ lookup('file', 'files/banner.txt') }}"
+      register: banner_content
+
+    - name: Set Log-in banner title
+      win_regedit:
+        path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+        name: LegalNoticeCaption
+        data: "WGU Students Only"
+        value_type: string
+        state: present
+
+    - name: Set log-in banner content on Windows devices    
+      win_regedit:
+        path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+        name: LegalNoticeText
+        data: "{{ banner_content }}"
+        value_type: string
+        state: present
+
+    
+- name: Set VyOS Login Banner
+  hosts: routers
+  vars:
+        banner_content: "{{ lookup('file', 'files/banner.txt') }}"
+
+  tasks:
+    - name: Set login banner interactively
+      vyos_banner:
+        banner: post-login
+        text: |
+          {{ banner_content }}
+
+
+- name: switch banners
+  hosts: switch
+
+  tasks:
+    - name: Set log-in banner on exos switches
+      script: ./exos_banner.sh
+      delegate_to: localhost
+      run_once: true
+                       

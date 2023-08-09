@@ -1,0 +1,12 @@
+- name: Install and configure windows firewall
+  hosts: windows
+  gather_facts: true
+
+  tasks:
+    - name: Disable port 23 in windows firewall
+      win_firewall_rule:
+        name: Disable Port 23
+        localport: 23
+        action: block
+        direction: in
+        protocol: tcp

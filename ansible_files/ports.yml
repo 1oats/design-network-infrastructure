@@ -1,0 +1,45 @@
+- name: Install firewalld and disable port 23
+  hosts: routers, switch, linux
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install firewalld package
+      package:
+        name: firewalld
+        state: present
+  
+    - name: Start firewalld service
+      service:
+        name: firewalld
+        state: started
+        enabled: true
+
+    - name: Disable port 23 with firewalld
+      firewalld:
+        port: "23/tcp"
+        permanent: true
+        immediate: true
+        state: disabled
+
+    - name: Enable port 10050 with firewalld
+      firewalld:
+        port: "10050/tcp"
+        permanent: true
+        immediate: true
+        state: enabled
+
+    - name: Enable port 123 with firewalld
+      firewalld:
+        port: "123/udp"
+        permanent: true
+        immediate: true
+        state: enabled
+
+    - name: Enable port 514 with firewalld
+      firewalld:
+        port: "514/udp"
+        permanent: true
+        immediate: true
+        state: enabled
+
