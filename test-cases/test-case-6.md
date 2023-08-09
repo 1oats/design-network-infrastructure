@@ -7,10 +7,17 @@
  The edge router and firewall are the edge devices that will configured to send syslogs to a centralized syslog server. The syslog server IP is 10.10.11.11
 
 The edge router and firewall will be configured to use the NTP server with IP 10.10.11.10
- 
 
-
+ 
 ## Network Diagram Segment
+<br>
+<div align="center">
+  <img src="../screenshots/t6/diagram6.png" alt="ip" width="700">
+</div>
+<div align="center">
+  <img src="../screenshots/t6/core_legend.png" alt="core" width="345">
+  <img src="../screenshots/t6/dmz_legend.png" alt="dmz" legend" width="345">
+</div>
 
 ## Testing Method
 
@@ -42,10 +49,7 @@ Verify the NTP service is ‘active’ on NTP clients, edgerouter and firewall
 
 Check if ntp is in INIT,  STEP, or <ip> stage under refid. The NTP service should synchronize and show and <IP> if properly configured.  
 `Show NTP`  
-
-
-
-
+<br>
 
 ## Process List
 Install rsyslog on the syslog server:  
@@ -72,6 +76,10 @@ if $fromhost-ip == '10.10.1.2' then ?firewall
 & ~
 ````
 
+<div align="center">
+  <img src="../screenshots/t6/rsyslog_conf.png" alt="rsyslog.conf" width="700">
+</div>
+<br><br>
 
 Allow port 514 in the firewall, or use ports.yaml in /home/student/ansible to enable 514/udp  
 
@@ -82,9 +90,15 @@ Allow port 514 in the firewall, or use ports.yaml in /home/student/ansible to en
 Create the log folder directory on the Syslog server. Enable write permissions, either 755,766, or 777 permissions, and verify.  
 
 `sudo mkdir /var/log/remote`  
-`sudo chmod 755 /var/log/remotels –ld /var/log/remote`  
-
-
+`sudo chmod 755 /var/log/remote
+ls –ld /var/log/remote`  
+<br>
+<div align="center">
+ <p>Test cases show there are no errors in /etc/syslog.conf, the rsyslog status is active, syslog is listening on port 514, and the syslogs files were created from the edge router and firewall.</p>
+  <img src="../screenshots/t6/active_rsyslog.png" alt="active status" width="700">
+</div>
+<br>
+<br>
 
 
 
@@ -102,10 +116,26 @@ Configure the edgerouter and firewalls to set a remote syslog host, with desired
 Confirm the syslog host has been configured on the edge router and firewall with  
 `show system syslog host`  
 
-
-
-
-
+<div align="center">
+ <p>‘show system syslog host’ on the edge router</p>
+  <img src="../screenshots/t6/show_syslog_host.png" alt="show system syslog host edgerouter" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>‘show system syslog host’ on the firewall</p>
+  <img src="../screenshots/t6/show_syslog_firewall.png" alt="show system syslog host firewall" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>Contents of edgrouter.log in /var/log/remote on the syslog folder</p>
+  <img src="../screenshots/t6/edgerouter_log.png" alt="edgerouter.log" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>Contents of firewall.log in /var/log/remote on the syslog folder</p>
+  <img src="../screenshots/t6/firewall_log.png" alt="firewall.log" width="700">
+</div>
+<br><br>
 
 Configure NTP Server  
 `sudo apt update`  
@@ -130,17 +160,22 @@ server 2.us.pool.ntp.org
 server 3.us.pool.ntp.org
 ````
 
-
-
+<div align="center">
+  <img src="../screenshots/t6/ntp_conf.png" alt="ntp.conf" width="700">
+</div>
+<br>
+<br>
 
 Restart service for the changes to take effect:  
 `sudo systemctl restart ntp`  
+<br>
 
-Verify  the NTP server is properly running with `service NTP status` and `ntpq –p`  
-
-
-
-
+<div align="center">
+ <p>Verify  the NTP server is properly running with ‘service NTP status’ and ‘ntpq –p’</p>
+  <img src="../screenshots/t6/service_ntp_status.png" alt="service ntp status" width="700">
+</div>
+<br>
+<br>
 
 Configure NTP clients (edgerouter and firewall) to use the NTP server  
 `config`  
@@ -152,7 +187,17 @@ Test that the ntp service is running with `sudo service ntp status` and `show nt
 
 
 
+<div align="center">
+ <p>NTP service is configured on the edge router</p>
+  <img src="../screenshots/t6/ntp_time_edge.png" alt="ntp time edge" width="700">
+</div>
+<br>
+<br>
 
-
-
+<div align="center">
+ <p>NTP service is configured on the firewall</p>
+  <img src="../screenshots/t6/ntp_time_firewall.png" alt="ntp time firewall" width="700">
+</div>
+<br>
+<br>
 
