@@ -56,7 +56,7 @@ Look for `Interactive login: Message text...` and `Interactive: Message title...
  
 
 
-### Process List
+## Process List
 Use the banner.yml, inv.ini, exos_banner.sh, and files/banner.txt in the GitLab repository
 
 
