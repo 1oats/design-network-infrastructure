@@ -23,7 +23,7 @@ Or for linux devices:
 `sudo dhclient ens3`  
 
 
-### Process List
+## Process List
 The DHCP server, along with other Ubuntu servers in this network, are assigned a static IP address with netplan.  
 
 Open the netplan file and add the entry to configure a static IP address.  
