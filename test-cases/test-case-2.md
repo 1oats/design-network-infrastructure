@@ -13,7 +13,7 @@
  From the Guest device, ping internal networks to make sure they are not reachable. The guest device should be able to reach the external internet at 8.8.8.8  
 
 
-### Process List
+## Process List
 Create a firewall rule to allow connections from the Guest_Network to the Public Internet, on the Edge Router.  
 
 `set firewall name guest rule 30 source address 10.10.12.0/24`  
