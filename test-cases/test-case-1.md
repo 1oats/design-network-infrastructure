@@ -25,7 +25,7 @@ From 10.10.15.11 `ping 10.10.16.10`
 There should be no response due to the ACL on the distribution switch.  
 
 
-### Process List
+## Process List
 
 On the edge router, configure the ACL rule and attach it to an interface.
 
