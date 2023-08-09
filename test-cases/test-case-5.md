@@ -9,6 +9,13 @@ This particular network has no redundant paths for incoming and outgoing traffic
 
 
 ## Network Diagram Segment
+<br>
+<div align="center">
+  <img src="../screenshots/t5/diagram5.png" alt="diagram 5" width="700">
+</div>
+<div align="center">
+  <img src="../screenshots/t5/switch_legend.png" alt="switch legend" width="345">
+</div>
 
 ## Testing Method
 On the distribution switch, verify that stpd is configured.  
@@ -23,4 +30,8 @@ Run this command to configure STP on the distribution switch:
 
 Check that STP has been configured.  
 `show stpd s0`
-
+<br><br>
+<div align="center">
+  <img src="../screenshots/t5/show_ntp.png" alt="can't ping" width="700">
+</div>
+<br><br>
