@@ -18,31 +18,56 @@ This [project approval form](project-approval.md) encompasses an organizational 
 
 #### Test Case #1 Device Discovery and Reachability  
 - Your network solution must include multiple network segments with access controls that allow traffic from a device on one network to access the resources of a device on another network. Similarly, there must be devices on one network that cannot access resources on a different network.
-
+  
+  - Test Case #1 [Solution](/test-cases/test-case-1.md)
 #### Test Case #2 Administering an Access Control List for Guest Access 
 - Your network must utilize an Access Control List that allows guest access. Guest access should be limited to internet traffic only. 
-
+  
+  - Test Case #2 [Solution](/test-cases/test-case-2.md)
 #### Test Case #3 Security Compliance—Log-in Banners and Automation 
 - Display a log-in banner when accessing each device on the network. The log-in banner should notify users of an acceptable use policy (AUP) or other security-based policies when attempting to log into the network. 
 Additionally, establish an automated process to update the log-in banner for multiple devices. Clearly identify the devices that will be updated, and provide a step-by-step guide for initiating the automated updates. 
-
+  
+  - Test Case #3 [Solution](/test-cases/test-case-3.md)
 #### Test Case #4 Accessing External Resources—Routing and Traffic Security
 - User devices on your network should have dynamic addresses that are assigned through DHCP unless they provide a service that requires a static address. You must also have at least one network resource that requires a static address. 
-
+  
+  - Test Case #4 [Solution](/test-cases/test-case-4.md)
 #### Test Case #5 Layer 2 Link Redundancy and Spanning-Tree Protocol (802.1w)
 - Enable and manage the Spanning-Tree Protocol to establish redundant Layer 2 paths while avoiding possible loops and broadcast storms. Identify the Layer 2 devices that will become the Root Bridge. 
- 
+  
+  - Test Case #5 [Solution](/test-cases/test-case-5.md)
 #### Test Case #6 Edge Device Syslog and NTP 
 - Configure perimeter devices to generate system logs that capture unwanted traffic. Additionally, those perimeter devices should utilize Network Time Protocol (NTP) for clock synchronization. 
- 
+  
+  - Test Case #6 [Solution](/test-cases/test-case-6.md)
 #### Test Case #7 Basic Network Segmentation at Layer 2 via VLANs and 802.1q
 - Your network traffic should be segmented per department or service function at Layer 2 to enhance security and reduce network congestion at the switching layer while allowing segmented traffic to traverse between switches (VLAN trunking).  
-
+  
+  - Test Case #7 [Solution](/test-cases/test-case-7.md)
 #### Test Case #8 Basic or Advanced Networking  
 - Identify devices on the network that allow for unsecured ports (port 23) Ensure that telnet is blocked if the port is open.
-
+  
+  - Test Case #8 [Solution](/test-cases/test-case-8.md)
 #### Test Case #9 Network Automation 
 - Automate the backup of network device configurations on a weekly basis. Retrieve device configurations, and store them in a centralized location for easy access and disaster recovery.
-
+  
+  - Test Case #9 [Solution](/test-cases/test-case-9.md)
 #### Test Case #10 Network Security 
 - Implement a networking monitoring tool that tracks network performance such as device statistics, link failures, high CPU utilization, or security breaches. Generate an alert for a specific event.
+  
+  - Test Case #10 [Solution](/test-cases/test-case-10.md)
+<br><br>
+### Each test Case will fulfill 
+#### Functionality 
+Describe the functionality of the test case in relation to the network project. Identify the relevant tools (devices, subnets, etc.) used in this test case and their specific interactions.  
+
+#### Network Diagram or Segment 
+Provide a network diagram or segment visualizing the topology and devices used in this test case.  
+ 
+#### Testing Method 
+Summarize the testing method used to verify functionality of the network project within the virtual lab environment, including any metrics of success.  
+
+#### Process List 
+Provide a comprehensive process list of the steps taken within the network project to run the testing method. Include screenshots to illustrate the process and ensure clarity for others attempting to replicate the test. 
+
