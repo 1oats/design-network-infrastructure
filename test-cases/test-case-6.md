@@ -94,7 +94,7 @@ Create the log folder directory on the Syslog server. Enable write permissions, 
 ls –ld /var/log/remote`  
 <br>
 <div align="center">
- <p>Test cases show there are no errors in /etc/syslog.conf, the rsyslog status is active, syslog is listening on port 514, and the syslogs files were created from the edge router and firewall.</p>
+  <p>Test cases show there are no errors in /etc/syslog.conf, the rsyslog status is active, syslog is listening on port 514, and the syslogs files were created from the edge router and firewall.</p>
   <img src="../screenshots/t6/active_rsyslog.png" alt="active status" width="700">
 </div>
 <br>
@@ -184,9 +184,7 @@ Configure NTP clients (edgerouter and firewall) to use the NTP server
 `save`  
 
 Test that the ntp service is running with `sudo service ntp status` and `show ntp` 
-
-
-
+<br><br>
 <div align="center">
  <p>NTP service is configured on the edge router</p>
   <img src="../screenshots/t6/ntp_time_edge.png" alt="ntp time edge" width="700">
