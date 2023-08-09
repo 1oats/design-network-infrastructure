@@ -15,7 +15,7 @@ On the distribution switch, verify that stpd is configured.
  `show stpd s0`  
 
 
-### Process List
+## Process List
  Exos router comes default with MSTP. The default stp name is ‘s0’ and it is bound to the ‘Default’ Vlan. With auto-bind as the default configuration, all VLANS on the switch are attached to ‘s0’.  
 
 Run this command to configure STP on the distribution switch:  
