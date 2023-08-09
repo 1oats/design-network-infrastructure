@@ -7,6 +7,13 @@
  The distribution switch handles routing between VLANS on the internal network. A VLAN must be configured for each interface that handles a network. And then the VLANS need to be configured to communicate with each other.  
 
 ## Network Diagram Segment
+<br>
+<div align="center">
+  <img src="../screenshots/t7/diagram7.png" alt="diagram7" width="700">
+</div>
+<div align="center">
+  <img src="../screenshots/t7/switch_legend.png" alt="swtich legend" width="345">
+</div>
 
 ## Testing Method
 Intervlan connectivity is tested by pinging a device on another VLAN. Ping other interfaces, ping other devices, and run a Wireshark capture if the ping fails.  
@@ -21,6 +28,8 @@ If the device can communicate with a device on another VLAN, then ipforwarding i
 `show configuration`  
 
 ## Process List
+On the switch:  
+
 `create vlan External`  
 `configure vlan External tag 10`  
 `configure vlan External add port 1 untagged`  
@@ -56,3 +65,25 @@ If the device can communicate with a device on another VLAN, then ipforwarding i
 
 `enable ipforwarding between the VLANsEnable ipforwarding vlan 200-600`  
 `enable ipforwarding vlan 10`  
+<br><br>
+<div align="center">
+ <p>show vlan</p>
+  <img src="../screenshots/t7/show_vlan.png" alt="show vlan" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>show iproute</p>
+  <img src="../screenshots/t7/show_iproute.png" alt="show iproute" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>show config</p>
+  <img src="../screenshots/t7/show_config.png" alt="show config" width="700">
+  <img src="../screenshots/t7/show_config2.png" alt="show config 2" width="700">
+</div>
+<br><br>
+<div align="center">
+ <p>Ping devices across other VLANs to ensure connectivity</p>
+  <img src="../screenshots/t7/ping_success.png" alt="ping success" width="700">
+</div>
+<br><br>
